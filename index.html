@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>nyancat_clock</title>
+</head>
+
+<style>
+
+*{
+	margin:0px;
+	padding:0px;
+}
+
+
+
+</style>
+
+
+<body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.22/p5.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.22/addons/p5.dom.min.js"></script>
+	<script src="./script.js"></script>
+
+	<script>
+	
+		changeTitle();
+		setInterval("changeTitle()",1000);
+
+		function changeTitle(){
+
+			var date = new Date();
+			var hour = date.getHours(); 
+			var min = date.getMinutes();
+			if(hour < 10)  hour = "0" + hour; 
+			if(min  < 10)   min = "0" + min;
+		    var	time = hour + ":" + min;
+
+			document.title = time;
+		}
+	</script>
+
+
+</body>
+</html>
